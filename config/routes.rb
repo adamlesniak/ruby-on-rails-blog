@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   root 'articles#index'
+  
+  get "/articles" => redirect("/")
   get 'about', to: 'pages#about'
+  get 'users', to: 'users#show'
 
   resources :articles, :except => :index
   # Example of regular route:

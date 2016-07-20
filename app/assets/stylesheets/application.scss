@@ -33,3 +33,11 @@
 .center {
   text-align: center;
 }
+
+.single-article {
+  p {
+    text-align: left;
+  }
+  @extend .center
+}
+
