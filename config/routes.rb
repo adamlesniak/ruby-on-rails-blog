@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   
   get "/articles" => redirect("/")
   get 'about', to: 'pages#about'
-  get 'users', to: 'users#show'
 
+  get 'sign_up', to: 'users#new'
+  
+  
+  resources :users, :except => :new
   resources :articles, :except => :index
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
