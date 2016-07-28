@@ -3,7 +3,7 @@
 
 <%= link_to "Articles listing", articles_path %>
 
-<% if logged_in? && current_user == @article.user %>
+<% if logged_in? && (current_user == @article.user || current_user.admin?) %>
   <%= link_to "Delete this article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
   <%= link_to "Edit this article", edit_article_path(@article) %>
 <% end %>
