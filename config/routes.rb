@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   
   resources :users, :except => :new
   resources :articles, :except => :index
+  
+  resources :categories, except: [:destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
