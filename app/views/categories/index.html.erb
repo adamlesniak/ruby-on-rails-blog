@@ -1,5 +1,6 @@
 <h1 align="center">Listing all categories</h1>
 <div align="center">
+<%= link_to("Create new category", new_category_path) if logged_in? and current_user.admin? %>
 <%= will_paginate %>
   <% @categories.each do |category| %>
     <ul class="listing">
