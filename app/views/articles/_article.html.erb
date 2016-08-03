@@ -5,6 +5,9 @@
   <small>Created by: <%= article.user.username if article.user %>, 
   <%= time_ago_in_words(article.created_at) %> ago, 
   last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+  <% if article.categories.any? %>
+    <p>Categories <%= render article.categories %></p>
+  <% end %>
   <% if logged_in? && (current_user == article.user || current_user.admin?) %>
     <span><%= link_to 'Edit', edit_article_path(article) %></span>
     <span><%= link_to 'Remove', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></span>

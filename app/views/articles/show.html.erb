@@ -1,6 +1,10 @@
 <h2><%= @article.title %></h2>
 <p><%= simple_format(@article.description) %></p>
 
+<% if @article.categories.any? %>
+<p>Categories <%= render @article.categories %></p>
+<% end %>
+
 <%= link_to "Articles listing", articles_path %>
 
 <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
