@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserSignupTest < ActionDispatch::IntegrationTest
+class CreateUserTest < ActionDispatch::IntegrationTest
   
  
   test "get new userform and valid sign up" do
